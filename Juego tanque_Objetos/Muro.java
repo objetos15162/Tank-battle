@@ -11,15 +11,14 @@ public class Muro extends Actor
     
     public void act() 
     {
-       checaBala();
-       //checaBala2();
-       //checaBala3();
+       checaBalaJugador();
+       checaBalaEnemigo();
     }    
     /**
     * checa si el muro fue tocado por una bala
     * y desaparece
     */
-    public void checaBala()
+    public void checaBalaJugador()
     {
         MyWorld mundo=(MyWorld)getWorld();
         Actor bala=getOneIntersectingObject(Bala_Jugador.class);
@@ -28,19 +27,14 @@ public class Muro extends Actor
             getWorld().removeObject(bala);
         }
     }
-    public void checaBala2(){
-        Muro muro;
-        if(isTouching(Bala_Jugador.class)){
-            removeTouching(Bala_Jugador.class);
-            removeTouching(Muro.class);
+    
+    public void checaBalaEnemigo()
+    {
+        MyWorld mundo=(MyWorld)getWorld();
+        Actor bala=getOneIntersectingObject(Bala_Enemigo.class);
+        if(bala!= null)
+        {
+            getWorld().removeObject(bala);
         }
-    }
-    public void checaBala3(){
-        Actor bala= getOneObjectAtOffset(0,0,Bala_Jugador.class);
-        if(bala!=null){
-            MyWorld mundo=(MyWorld)getWorld();
-            mundo.removeObject(bala);
-        }
-            
     }
 }

@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Mi mundo
  */
 public class MyWorld extends World
 {
-
+     private Tanque_Jugador Tanque;
+     private GreenfootImage imagenB; //Para cambiar la imagen blindaje
+     private GreenfootImage imagenN; //Para cambiar la imagen normal
+     
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -18,6 +18,8 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(650, 500, 1);
         prepare();
+        imagenB=new GreenfootImage("Tanque_Jugador_Blindaje_SinFondo.png");
+        imagenN=new GreenfootImage("Tanque_Jugador_SinFondo.png");
     }
 
     /**

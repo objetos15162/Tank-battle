@@ -5,12 +5,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Blindaje extends Actor
 {
-    private Tanque_Jugador Tanque;
+     private Tanque_Jugador Tanque;
      private GreenfootImage imagenB; //Para cambiar la imagen blindaje
      private GreenfootImage imagenN; //Para cambiar la imagen normal
     public void act() 
     {
-        Blindaje();
+       // Blindaje();
     }
     public Blindaje()
     {
@@ -28,8 +28,7 @@ public class Blindaje extends Actor
         {
             touch=true;
                 getWorld().removeObject(blindaje);
-                mundo.creaJugador();
-                Tanque.setImage(imagenB);
+                Tanque.cambiaImagen();
         }
         else
         {
@@ -45,5 +44,5 @@ public class Blindaje extends Actor
         {
          System.out.println(e.getMessage());
         } 
-}
+    }
 }

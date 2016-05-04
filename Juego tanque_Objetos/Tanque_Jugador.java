@@ -9,12 +9,21 @@ public class Tanque_Jugador extends MoverObjetos
     private final int DER=45;   //Grados que gira hacia la derecha
     private int direccion=2;    //Direccion del tanque
     private int velocidad=0;    //Velocidad del tanque
+    private GreenfootImage imagenB; //Para cambiar la imagen blindaje
+    private GreenfootImage imagenN; //Para cambiar la imagen normal
     public void act() 
     {
         muevete();
         dispara();
-    }   
-    
+        blindaje();
+    } 
+    public Tanque_Jugador()
+    {
+        imagenB=new GreenfootImage("Tanque_Jugador_Blindaje_SinFondo.png");
+        imagenN=new GreenfootImage("Tanque_Jugador_SinFondo.png");
+        setImage(imagenN);
+    }
+    /**Metodo de movimiento y verifica si existe un muro*/
     public void muevete(){
         boolean hay=false; //Bandera que checa si hay objetos
         
@@ -102,7 +111,7 @@ public class Tanque_Jugador extends MoverObjetos
      */       
     public void dispara()
     {
-        if(velocidad%10==0)
+        if(velocidad%70==0)
         {
             if(Greenfoot.isKeyDown("space")) //Checa si se presiono la tecla Espacio
             {
@@ -112,8 +121,30 @@ public class Tanque_Jugador extends MoverObjetos
                 int y=getY();
                 World world=getWorld();
                 world.addObject(A,x,y);
-                //Sonido de Bala
             }
+        }
+    }
+    /**Cambia la imagen del tanquue*/
+    public void cambiaImagen()
+    {
+        if(getImage()==imagenN)
+        {
+            setImage(imagenB);
+        }else
+        {
+            setImage(imagenN);
+        }
+    }
+    
+    public void blindaje()
+    {
+        boolean touch=false;
+        MyWorld mundo=(MyWorld)getWorld();
+        Actor blindaje=getOneIntersectingObject(Blindaje.class);
+        if(blindaje!=null)
+        {
+            getWorld().removeObject(blindaje);
+            cambiaImagen();
         }
     }
 }
