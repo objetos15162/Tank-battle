@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Bala_Enemigo
+comment0.text=\r\n\ Bala\ del\ Enemigo\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=direccion
+comment2.target=Bala_Enemigo(int)
+comment3.params=
+comment3.target=void\ DesapareceTanque()
+comment3.text=Metodo\ que\ Borra\ el\ tanque\ del\ jugador\ si\ lo\ alcanzo\ una\ bala
+comment4.params=
+comment4.target=void\ ReapareceJugador()
+comment4.text=Metodo\ para\ crear\ un\ nuevo\ jugador,\ una\ vez\ tocado\ por\ la\ bala\ enemiga
+numComments=5

@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Enemigo
+comment0.text=\r\n\ Clase\ del\ Enemigo\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ muevete()
+comment3.params=
+comment3.target=void\ cambiaPosicion()
+comment3.text=\r\n\ Cuando\ Hay\ pared\ da\ vuelta\ y\ cambia\ de\ posicion\r\n
+comment4.params=Rotacion
+comment4.target=void\ cambiaDireccion(int)
+comment4.text=\r\n\ Cambia\ la\ Direccion\ dependiendo\ hacia\ donde\ se\ haya\ girado\r\n\ 270\=\ Arriba\r\n\ 90\=\ Abajo\r\n\ 0\=\ Deracha\r\n\ 180\=Izquierda\r\n
+comment5.params=
+comment5.target=void\ dispara()
+comment5.text=\r\n\ Metodo\ que\ hace\ disparar\ al\ enemigo\ en\ la\ posicion\ X,Y\ del\ enemigo\r\n
+numComments=6

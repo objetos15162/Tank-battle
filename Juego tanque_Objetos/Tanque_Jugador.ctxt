@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Tanque_Jugador
+comment0.text=\r\nEsta\ es\ la\ clase\ del\ Jugador\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ muevete()
+comment3.params=
+comment3.target=void\ cambiaPosicion()
+comment3.text=\r\n\ Cuando\ se\ encuentra\ con\ una\ pared\ da\ vuelta\ \r\n\ y\ cambia\ de\ posicion\r\n
+comment4.params=Rotacion
+comment4.target=void\ cambiaDireccion(int)
+comment4.text=\r\n\ Cambia\ la\ Direccion\ del\ tanque\ del\ jugador\ dependiendo\ hacia\ donde\ se\ haya\ girado\r\n\ 270\=\ Arriba\r\n\ 90\=\ Abajo\r\n\ 0\=\ Deracha\r\n\ 180\=Izquierda\r\n
+comment5.params=
+comment5.target=void\ dispara()
+comment5.text=\ \r\n\ Hace\ que\ el\ tanque\ del\ usuario\ dispare\ con\ la\ tecla\ abajo\ del\ las\ teclas\ de\ direccion\r\n
+numComments=6

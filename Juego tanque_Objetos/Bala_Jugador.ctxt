@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Bala_Jugador
+comment0.text=\r\nLa\ clase\ simula\ la\ bala\ disparada\ por\ el\ tanque\r\n
+comment1.params=direccion
+comment1.target=Bala_Jugador(int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=metodo\ Act,\ manda\ llamar\ a\ la\ clase\ move,\ para\ que\ la\ bala\ salga\r\nde\ la\ misma\ posicion\ X,Y\ que\ el\ tanque\ del\ jugador
+comment3.params=
+comment3.target=void\ desapareceMuro()
+comment3.text=Este\ metodo\ verifica\ si\ se\ encontro\ en\ la\ misma\ posicion\ un\ muro\r\n\ \ \ \ \ \ \ y\ lo\ desaparece\r\nLa\ intruccion\ "getOneIntersectingObject"\ Devuelve\ un\ objeto\ que\ se\ cruza\ con\r\nel\ objeto\ Muro,\ en\ este\ caso\ la\ bala
+comment4.params=
+comment4.target=void\ desapareceEnemigo2()
+comment4.text=\r\n\ \ \ \ public\ void\ desapareceMuro2(){\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ if(isTouching(Muro.class))\r\n\ \ \ \ \ \ \ \ \ \ \ \ removeTouching(Muro.class);\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ }\r\n\ \ \ \ public\ void\ desapareceMuro3(){\r\n\ \ \ \ \ \ \ \ Actor\ muro\=getOneObjectAtOffset(5,5,Muro.class);\r\n\ \ \ \ \ \ \ \ if(muro\!\=null){\r\n\ \ \ \ \ \ \ \ \ \ \ \ MyWorld\ mundo\=(MyWorld)getWorld();\r\n\ \ \ \ \ \ \ \ \ \ \ \ mundo.removeObject(muro);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \r\n}
+comment5.params=
+comment5.target=void\ desapareceEnemigos()
+comment5.text=Este\ metodo\ Elimina\ a\ los\ enemigos\ tocados\ por\ una\ bala\r\ny\ lo\ desaparece\ junto\ con\ la\ bala\r\nLa\ intruccion\ "getOneIntersectingObject"\ Devuelve\ un\ objeto\ que\ se\ cruza\ con\r\nel\ objeto\ Tanque,\ en\ este\ caso\ la\ bala
+numComments=6
