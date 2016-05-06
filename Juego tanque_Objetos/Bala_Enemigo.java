@@ -20,7 +20,8 @@ public class Bala_Enemigo extends MoverObjetos
     public void DesapareceTanque()
     {
         boolean touch=false;
-        MyWorld mundo=(MyWorld)getWorld();
+        World mundo=getWorld();
+        MyWorld MYWorld= (MyWorld) mundo;
         Actor Tanque=getOneIntersectingObject(Tanque_Jugador.class);
         try
         {
@@ -28,7 +29,7 @@ public class Bala_Enemigo extends MoverObjetos
             {
                 touch=true;
                 getWorld().removeObject(Tanque);
-                mundo.creaJugador();
+                ReapareceJugador();
             }
             else
             {
@@ -48,8 +49,9 @@ public class Bala_Enemigo extends MoverObjetos
     /**Metodo para crear un nuevo jugador, una vez tocado por la bala enemiga*/
         
     public void ReapareceJugador(){
-        MyWorld mundo=(MyWorld)getWorld();
-        mundo.creaJugador();
+        World mundo=getWorld();
+        MyWorld MYWorld= (MyWorld) mundo;
+        MYWorld.quitaVida(1);
         
     }
 }

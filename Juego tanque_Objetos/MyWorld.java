@@ -8,6 +8,8 @@ public class MyWorld extends World
      private Tanque_Jugador Tanque;
      private GreenfootImage imagenB; //Para cambiar la imagen blindaje
      private GreenfootImage imagenN; //Para cambiar la imagen normal
+     private int vidas=5; //Vidas del jugador
+     private Contador vida;  // para el contador
      
     /**
      * Constructor for objects of class MyWorld.
@@ -17,9 +19,12 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(650, 500, 1);
-        prepare();
         imagenB=new GreenfootImage("Tanque_Jugador_Blindaje_SinFondo.png");
         imagenN=new GreenfootImage("Tanque_Jugador_SinFondo.png");
+        prepare();
+        //ponContador();
+        
+       
     }
 
     /**
@@ -360,6 +365,11 @@ public class MyWorld extends World
         Blindaje blindaje = new Blindaje();
         addObject(blindaje,500,280);
         blindaje.setLocation(494,274);
+        Contador contador = new Contador();
+        addObject(contador,600,479);
+        contador.setLocation(580,422);
+        removeObject(contador);
+        ponContador();
     }
     
     /**Crea el tanque del jugador en la posicion X,Y seleccionados
@@ -369,5 +379,28 @@ public class MyWorld extends World
         addObject(a,225,380);
         a.turn(270);
        
+    }
+    /**al recibir un 1, se descuenta la vida del jugador*/
+    public void quitaVida(int V)
+    {
+        if(V==1)
+        {
+            vidas--;
+            creaJugador();
+            vida.setValue(vidas);
+            System.out.println(vidas);
+        }
+    }
+    /**Agrega contador de vidas*/
+    public void ponContador()
+    {
+          vida=new Contador("Vidas: ");
+          addObject(vida,600,480);
+          vida.setValue(5);
+    }
+    
+    public int getVidas()
+    {
+        return vidas;
     }
 }
