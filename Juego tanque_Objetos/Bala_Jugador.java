@@ -18,10 +18,7 @@ public class Bala_Jugador extends MoverObjetos
     {
         move(); 
         desapareceEnemigos();
-        //desapareceEnemigo2();
         //desapareceMuro();
-        //desapareceMuro2();
-        //desapareceMuro3();
     }    
     /**Este metodo verifica si se encontro en la misma posicion un muro
        y lo desaparece
@@ -46,43 +43,6 @@ public class Bala_Jugador extends MoverObjetos
     catch(Exception e){
          System.out.println(e.getMessage());
         }   
-    }
-    /*
-    public void desapareceMuro2(){
-        
-        if(isTouching(Muro.class))
-            removeTouching(Muro.class);
-        
-    }
-    public void desapareceMuro3(){
-        Actor muro=getOneObjectAtOffset(5,5,Muro.class);
-        if(muro!=null){
-            MyWorld mundo=(MyWorld)getWorld();
-            mundo.removeObject(muro);
-            
-        }
-        
-    }*/
-  
-   public void desapareceEnemigo2(){
-        boolean touch=false; //Bandera que me indica si la bala toco al tanque
-        MyWorld mundo=(MyWorld)getWorld();
-        Actor Tanque=getOneIntersectingObject(Enemigo2.class);
-        try{
-        if(Tanque!=null){
-            touch=true; //Si la bala lo toco
-            getWorld().removeObject(Tanque);
-        }
-        else{
-            touch=false; // Si no lo toco
-        }
-        if(touch==true){ //Si la bala toco al tanque
-            getWorld().removeObject(this); //borra la la bala, el "this" hace referencia al objeto mismo osea la bala
-        }
-    }
-        catch(Exception e){
-         System.out.println(e.getMessage());
-        } 
     }
     /**Este metodo Elimina a los enemigos tocados por una bala
      *y lo desaparece junto con la bala
@@ -139,6 +99,12 @@ public class Bala_Jugador extends MoverObjetos
         if(touch3==true){ //Si la bala toco al tanque
             getWorld().removeObject(this); //borra la la bala, el "this" hace referencia al objeto mismo osea la bala
         }
+        
+        if(bordeMundo()) //Elimina la bala del jugador
+        {
+           getWorld().removeObject(this); 
+        }
+        
     }
     catch(Exception e){
         System.out.println(e.getMessage());

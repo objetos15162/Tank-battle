@@ -10,6 +10,7 @@ public class Bala_Enemigo extends MoverObjetos
     {
         move();
         DesapareceTanque();
+        //desapareceBalaEnemigo();
     }    
     
     Bala_Enemigo(int direccion){
@@ -39,8 +40,12 @@ public class Bala_Enemigo extends MoverObjetos
             { //Si la bala toco al tanque
                 getWorld().removeObject(this); //borra la la bala, el "this" hace referencia al objeto mismo osea la bala
             }
-            
-        }
+            if(bordeMundo())
+            {
+               getWorld().removeObject(this);
+            }
+            }
+       
         catch(Exception e)
         {
          System.out.println(e.getMessage());
@@ -54,4 +59,15 @@ public class Bala_Enemigo extends MoverObjetos
         MYWorld.quitaVida(1);
         
     }
+    
+    /**Desaparece la bala del Enemigo si toca el borde el mundo*/
+  /*  public void desapareceBalaEnemigo()
+    {
+        World mundo=getWorld();
+        MyWorld MYWorld= (MyWorld) mundo;
+        if(bordeMundo())
+        {
+            getWorld().removeObject(this);
+        }
+    }*/
 }

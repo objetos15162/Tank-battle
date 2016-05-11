@@ -10,6 +10,8 @@ public class MyWorld extends World
      private GreenfootImage imagenN; //Para cambiar la imagen normal
      private int vidas=5; //Vidas del jugador
      private Contador vida;  // para el contador
+     private int nNivel=1;  //Para generar el escenario de acuerdo al nivel
+     private Bala_Enemigo balaE;
      
     /**
      * Constructor for objects of class MyWorld.
@@ -32,353 +34,76 @@ public class MyWorld extends World
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
+    {  
+        creaJugador();
+        ponContador();
+        generaEscenario();
+        creaEnemigos();
+        ponPozo();
+        ponFabrica();
+        ponBlindaje();
+    }
+    /**Crea el poder delblindaje*/
+    public void ponBlindaje()
     {
-        Muro muro = new Muro();
-        addObject(muro,97,21);
-        Muro muro2 = new Muro();
-        addObject(muro2,105,56);
-        muro2.setLocation(97,50);
-        muro.setLocation(82,18);
-        muro2.setLocation(82,47);
-        Muro muro3 = new Muro();
-        addObject(muro3,89,81);
-        Muro muro4 = new Muro();
-        addObject(muro4,92,122);
-        Muro muro5 = new Muro();
-        addObject(muro5,89,161);
-        Muro muro6 = new Muro();
-        addObject(muro6,242,189);
-        Muro muro7 = new Muro();
-        addObject(muro7,301,130);
-        Muro muro8 = new Muro();
-        addObject(muro8,285,76);
-        Muro muro9 = new Muro();
-        addObject(muro9,176,117);
-        Muro muro10 = new Muro();
-        addObject(muro10,188,231);
-        Muro muro11 = new Muro();
-        addObject(muro11,394,310);
-        Muro muro12 = new Muro();
-        addObject(muro12,438,310);
-        Muro muro13 = new Muro();
-        addObject(muro13,419,310);
-        Muro muro14 = new Muro();
-        addObject(muro14,409,187);
-        Muro muro15 = new Muro();
-        addObject(muro15,438,160);
-        Muro muro16 = new Muro();
-        addObject(muro16,446,129);
-        Muro muro17 = new Muro();
-        addObject(muro17,486,126);
-        Muro muro18 = new Muro();
-        addObject(muro18,455,194);
-        Muro muro19 = new Muro();
-        addObject(muro19,443,196);
-        Muro muro20 = new Muro();
-        addObject(muro20,441,194);
-        Muro muro21 = new Muro();
-        addObject(muro21,297,218);
-        Muro muro22 = new Muro();
-        addObject(muro22,355,257);
-        Muro muro23 = new Muro();
-        addObject(muro23,441,280);
-        Muro muro24 = new Muro();
-        addObject(muro24,461,282);
-        Muro muro25 = new Muro();
-        addObject(muro25,437,262);
-        Muro muro26 = new Muro();
-        addObject(muro26,326,257);
-        Muro muro27 = new Muro();
-        addObject(muro27,271,293);
-        muro3.setLocation(82,76);
-        muro4.setLocation(82,105);
-        muro9.setLocation(111,105);
-        muro5.setLocation(140,105);
-        muro8.setLocation(169,105);
-        muro6.setLocation(241,117);
-        muro6.setLocation(203,106);
-        Pozo pozo = new Pozo();
-        addObject(pozo,265,45);
-        muro6.setLocation(169,130);
-        pozo.setLocation(280,27);
-        muro7.setLocation(275,66);
-        muro14.setLocation(303,66);
-        muro15.setLocation(332,66);
-        muro16.setLocation(333,42);
-        muro16.setLocation(333,38);
-        muro17.setLocation(333,14);
-        muro20.setLocation(275,95);
-        muro19.setLocation(275,122);
-        muro18.setLocation(275,151);
-        Enemigo1 enemigo1 = new Enemigo1();
-        addObject(enemigo1,534,44);
-        Enemigo2 enemigo2 = new Enemigo2();
-        addObject(enemigo2,172,32);
-        Enemigo3 enemigo3 = new Enemigo3();
-        addObject(enemigo3,34,39);
-        muro10.setLocation(130,189);
-        muro21.setLocation(246,64);
-        muro21.setLocation(374,184);
-        muro6.setLocation(198,105);
-        muro10.setLocation(198,134);
-        muro21.setLocation(198,163);
-        muro26.setLocation(275,180);
-        muro22.setLocation(304,180);
-        muro27.setLocation(332,180);
-        muro25.setLocation(361,180);
-        muro23.setLocation(540,98);
-        muro24.setLocation(540,127);
-        muro12.setLocation(540,155);
-        muro13.setLocation(540,184);
-        muro11.setLocation(540,213);
-        Muro muro28 = new Muro();
-        addObject(muro28,215,286);
-        Muro muro29 = new Muro();
-        addObject(muro29,352,289);
-        Muro muro30 = new Muro();
-        addObject(muro30,380,302);
-        Muro muro31 = new Muro();
-        addObject(muro31,284,338);
-        Muro muro32 = new Muro();
-        addObject(muro32,224,334);
-        Muro muro33 = new Muro();
-        addObject(muro33,78,320);
-        Muro muro34 = new Muro();
-        addObject(muro34,116,291);
-        Muro muro35 = new Muro();
-        addObject(muro35,228,277);
-        Muro muro36 = new Muro();
-        addObject(muro36,364,300);
-        Muro muro37 = new Muro();
-        addObject(muro37,468,315);
-        Muro muro38 = new Muro();
-        addObject(muro38,496,308);
-        Muro muro39 = new Muro();
-        addObject(muro39,492,289);
-        Muro muro40 = new Muro();
-        addObject(muro40,481,352);
-        Muro muro41 = new Muro();
-        addObject(muro41,393,344);
-        Muro muro42 = new Muro();
-        addObject(muro42,393,344);
-        muro35.setLocation(198,192);
-        muro28.setLocation(275,209);
-        muro32.setLocation(198,221);
-        muro31.setLocation(82,133);
-        muro34.setLocation(15,144);
-        muro33.setLocation(15,173);
-        muro29.setLocation(16,203);
-        muro29.setLocation(6,203);
-        muro29.setLocation(4,203);
-        muro33.setLocation(3,173);
-        muro34.setLocation(4,144);
-        muro33.setLocation(4,173);
-        muro36.setLocation(6,116);
-        muro36.setLocation(4,116);
-        muro42.setLocation(6,87);
-        muro42.setLocation(6,87);
-        muro42.setLocation(5,87);
-        enemigo3.setLocation(48,42);
-        muro30.setLocation(3,60);
-        muro42.setLocation(4,87);
-        muro30.setLocation(3,58);
-        muro30.setLocation(3,60);
-        muro42.setLocation(3,87);
-        muro36.setLocation(3,116);
-        muro41.setLocation(3,32);
-        muro37.setLocation(468,315);
-        muro37.setLocation(468,315);
-        muro37.setLocation(468,315);
-        muro37.setLocation(468,315);
-        muro37.setLocation(4,5);
-        muro40.setLocation(33,3);
-        muro40.setLocation(33,4);
-        muro39.setLocation(62,8);
-        muro39.setLocation(62,5);
-        muro.setLocation(90,5);
-        muro2.setLocation(90,33);
-        muro40.setLocation(33,5);
-        muro3.setLocation(90,63);
-        muro4.setLocation(90,92);
-        muro9.setLocation(111,155);
-        muro31.setLocation(90,120);
-        muro5.setLocation(119,63);
-        muro8.setLocation(148,63);
-        muro9.setLocation(177,63);
-        muro6.setLocation(206,63);
-        muro10.setLocation(206,91);
-        muro21.setLocation(206,119);
-        muro35.setLocation(207,147);
-        muro35.setLocation(206,147);
-        muro32.setLocation(206,174);
-        muro31.setLocation(90,119);
-        muro34.setLocation(3,144);
-        muro33.setLocation(3,173);
-        muro29.setLocation(3,201);
-        MoverObjetos a=new Tanque_Jugador();
-        addObject(a,225,380);
-        a.turn(270);
-        Muro muro43 = new Muro();
-        addObject(muro43,396,187);
-        muro43.setLocation(390,180);
-        enemigo1.setLocation(342,249);
-        Enemigo3 enemigo32 = new Enemigo3();
-        addObject(enemigo32,215,281);
-        Enemigo2 enemigo22 = new Enemigo2();
-        addObject(enemigo22,276,283);
-        enemigo32.setLocation(213,263);
-        enemigo22.setLocation(270,262);
-        enemigo1.setLocation(342,284);
-        muro17.setLocation(362,14);
-        muro16.setLocation(362,39);
-        muro15.setLocation(362,65);
-        muro14.setLocation(333,67);
-        muro14.setLocation(336,65);
-        muro14.setLocation(334,65);
-        muro7.setLocation(305,66);
-        pozo.setLocation(325,24);
-        muro7.setLocation(305,65);
-        muro20.setLocation(305,93);
-        muro19.setLocation(305,120);
-        muro18.setLocation(305,148);
-        muro22.setLocation(304,177);
-        muro22.setLocation(306,177);
-        muro22.setLocation(305,177);
-        muro27.setLocation(334,177);
-        muro25.setLocation(363,176);
-        muro25.setLocation(363,177);
-        muro43.setLocation(392,177);
-        muro26.setLocation(90,148);
-        muro28.setLocation(90,177);
-        enemigo1.setLocation(342,106);
-        removeObject(enemigo3);
-        enemigo32.setLocation(386,103);
-        Enemigo2 enemigo23 = new Enemigo2();
-        addObject(enemigo23,62,49);
-        Enemigo2 enemigo24 = new Enemigo2();
-        addObject(enemigo24,173,109);
-        enemigo23.setLocation(51,48);
-        enemigo24.setLocation(174,101);
-        Enemigo2 enemigo25 = new Enemigo2();
-        addObject(enemigo25,540,317);
-        enemigo25.setLocation(537,312);
-        Enemigo2 enemigo26 = new Enemigo2();
-        addObject(enemigo26,498,33);
-        enemigo26.setLocation(494,28);
-        removeObject(enemigo22);
-        removeObject(enemigo26);
-        removeObject(enemigo24);
-        removeObject(enemigo2);
-        removeObject(enemigo23);
-        enemigo25.setLocation(358,290);
-        Enemigo2 enemigo27 = new Enemigo2();
-        addObject(enemigo27,227,237);
-        Enemigo2 enemigo28 = new Enemigo2();
-        addObject(enemigo28,56,276);
-        enemigo27.setLocation(204,28);
-        enemigo28.setLocation(52,97);
-        Enemigo2 enemigo29 = new Enemigo2();
-        addObject(enemigo29,173,113);
-        Enemigo2 enemigo210 = new Enemigo2();
-        addObject(enemigo210,582,47);
-        enemigo25.setLocation(385,303);
-        enemigo210.setLocation(476,41);
-        removeObject(enemigo210);
-        Enemigo2 enemigo211 = new Enemigo2();
-        addObject(enemigo211,467,51);
-        Fabrica fabrica = new Fabrica();
-        addObject(fabrica,611,35);
-        fabrica.setLocation(611,29);
-        Muro muro44 = new Muro();
-        addObject(muro44,648,69);
-        muro44.setLocation(648,69);
-        muro44.setLocation(648,69);
-        muro44.setLocation(648,69);
-        Muro muro45 = new Muro();
-        addObject(muro45,649,103);
-        muro45.setLocation(648,97);
-        fabrica.setLocation(586,33);
-        Muro muro46 = new Muro();
-        addObject(muro46,647,46);
-        Muro muro47 = new Muro();
-        addObject(muro47,644,26);
-        fabrica.setLocation(597,310);
-        Muro muro48 = new Muro();
-        addObject(muro48,602,43);
-        Muro muro49 = new Muro();
-        addObject(muro49,552,35);
-        Muro muro50 = new Muro();
-        addObject(muro50,492,32);
-        muro47.setLocation(644,4);
-        muro46.setLocation(644,32);
-        muro47.setLocation(649,4);
-        muro46.setLocation(644,32);
-        muro46.setLocation(644,32);
-        muro46.setLocation(644,32);
-        muro46.setLocation(644,32);
-        muro46.setLocation(644,32);
-        muro46.setLocation(649,32);
-        muro44.setLocation(648,61);
-        muro44.setLocation(649,60);
-        muro45.setLocation(648,97);
-        muro45.setLocation(648,97);
-        muro45.setLocation(648,97);
-        muro45.setLocation(648,97);
-        muro45.setLocation(648,97);
-        muro45.setLocation(648,97);
-        muro45.setLocation(648,97);
-        muro45.setLocation(648,97);
-        muro45.setLocation(648,97);
-        muro45.setLocation(649,91);
-        muro45.setLocation(649,88);
-        muro48.setLocation(612,16);
-        muro48.setLocation(620,4);
-        muro49.setLocation(591,4);
-        muro50.setLocation(562,4);
-        fabrica.setLocation(603,44);
-        muro23.setLocation(618,91);
-        muro23.setLocation(620,88);
-        muro24.setLocation(591,88);
-        muro12.setLocation(562,88);
-        muro13.setLocation(534,88);
-        muro24.setLocation(593,88);
-        muro24.setLocation(592,88);
-        muro11.setLocation(534,116);
-        Muro muro51 = new Muro();
-        addObject(muro51,520,169);
-        Muro muro52 = new Muro();
-        addObject(muro52,480,201);
-        Muro muro53 = new Muro();
-        addObject(muro53,445,260);
-        muro51.setLocation(534,144);
-        muro52.setLocation(523,14);
-        muro52.setLocation(533,3);
-        muro52.setLocation(533,5);
-        muro53.setLocation(501,20);
-        muro53.setLocation(504,7);
-        muro53.setLocation(504,6);
-        muro53.setLocation(504,3);
-        muro52.setLocation(533,3);
-        muro50.setLocation(562,3);
-        muro49.setLocation(591,3);
-        muro48.setLocation(620,3);
         Blindaje blindaje = new Blindaje();
         addObject(blindaje,500,280);
-        blindaje.setLocation(494,274);
-        Contador contador = new Contador();
-        addObject(contador,600,479);
-        contador.setLocation(580,422);
-        removeObject(contador);
-        ponContador();
     }
-    
+    /**Crea la fabrica en el escenario*/
+    public void ponFabrica()
+    {
+        Fabrica fabrica = new Fabrica();
+        addObject(fabrica,603,52);
+    }
+    /**Crea los pozos en el escenario*/
+    public void ponPozo()
+    {
+        Pozo p1 = new Pozo();
+        addObject(p1,321,33);   
+        
+        Pozo p2= new Pozo();
+        addObject(p2,70,30);
+        
+        Pozo p3=new Pozo();
+        addObject(p3,609,138);
+    }
     /**Crea el tanque del jugador en la posicion X,Y seleccionados
        *Junto con una rotacion establecida*/
-   public void creaJugador(){
-       MoverObjetos a=new Tanque_Jugador();
+   public void creaJugador()
+   {       
+        MoverObjetos a=new Tanque_Jugador();
         addObject(a,225,380);
-        a.turn(270);
-       
+        a.turn(270);    
+    }
+    /**Crea enemigos en el mundo*/
+    public void creaEnemigos()
+    {
+        //for(int i=0;i<5;i++)
+        //{
+        MoverObjetos e1= new Enemigo2();
+        addObject(e1,120,340);
+        e1.turn(180);
+        
+        MoverObjetos e2= new Enemigo2();
+        addObject(e2,450,50);
+        e2.turn(180);
+
+        MoverObjetos e3= new Enemigo2();
+        addObject(e3,50,100);
+        e3.turn(180);
+        
+        MoverObjetos e4= new Enemigo2();
+        addObject(e4,80,250);
+        e4.turn(180);
+        
+        MoverObjetos e5= new Enemigo2();
+        addObject(e5,537,180);
+        e5.turn(180);
+        
+        MoverObjetos e6= new Enemigo2();
+        addObject(e6,205,25);
+        e6.turn(180);
+        //}
     }
     /**al recibir un 1, se descuenta la vida del jugador*/
     public void quitaVida(int V)
@@ -388,7 +113,7 @@ public class MyWorld extends World
             vidas--;
             creaJugador();
             vida.setValue(vidas);
-            System.out.println(vidas);
+            //System.out.println(vidas);
         }
     }
     /**Agrega contador de vidas*/
@@ -398,9 +123,128 @@ public class MyWorld extends World
           addObject(vida,600,480);
           vida.setValue(5);
     }
-    
+    /**Regresa el numero de vidas del jugador, esto es para el Contador*/
     public int getVidas()
     {
         return vidas;
+    }
+    /**Metodo que crea los muros en el juego*/
+    public void generaEscenario()
+    {
+        switch(nNivel)
+        {
+            case 1:
+                generaEscenarioNivel1();
+                break;
+            case 2:
+                //Escenario nivel 2
+                break;
+                
+                
+        }
+    }
+    /**Genera escenario por nivel*/
+    public void generaEscenarioNivel1()
+    {
+                int x1=240;
+                for(int i=0; i<8;i++)
+                    {
+                        Actor m1= new Muro();
+                        addObject(m1,x1,300);
+                        x1=x1+30;
+                    }
+                    int y1=5;
+                for(int i=0;i<7;i++) //Primer pila de ladrillos
+                {
+                    Actor m2=new Muro();
+                    addObject(m2,3,y1);
+                    y1=y1+30;
+                }
+                    int x2=33;
+                for(int i=0;i<3;i++)
+                {
+                    Actor m3=new Muro();
+                    addObject(m3,x2,185);
+                    x2=x2+30;
+                }
+                    int y2=6;
+                for(int i=0;i<3;i++)
+                {
+                     Actor m4=new Muro();
+                    addObject(m4,120,y2);
+                    y2=y2+30;
+                }
+                    int x3=120;
+                for(int i=0;i<4;i++)
+                {
+                     Actor m5=new Muro();
+                    addObject(m5,x3,66);
+                    x3=x3+30;
+                }
+                    int y3=95;
+                for(int i=0;i<4;i++)
+                {
+                     Actor m6=new Muro();
+                    addObject(m6,210,y3);
+                    y3=y3+30;
+                }
+                    int y4=14;
+                for(int i=0;i<3;i++)
+                {
+                     Actor m7=new Muro();
+                    addObject(m7,362,y4);
+                    y4=y4+30;
+                }
+                int x4=305;
+                for(int i=0;i<2;i++)
+                {
+                    Actor m8=new Muro();
+                    addObject(m8,x4,73);
+                    x4=x4+30;
+                }
+                int y5=103;
+                for(int i=0;i<4;i++)
+                {
+                    Actor m9=new Muro();
+                    addObject(m9,305,y5);
+                    y5=y5+30;
+                }
+                int x5=504;
+                for(int i=0;i<6;i++)
+                {
+                    Actor m10=new Muro();
+                    addObject(m10,x5,3);
+                    x5=x5+30;
+                }
+                int y6=32; //Fabrica
+                for(int i=0;i<8;i++)
+                {
+                    Actor m11=new Muro();
+                    addObject(m11,649,y6);
+                    y6=y6+30;
+                }
+                int x6=562;
+                for(int i=0;i<3;i++)
+                {
+                    Actor m12=new Muro();
+                    addObject(m12,x6,92);
+                    x6=x6+30;
+                }
+                int x7=574;
+                for(int i=0;i<3;i++)
+                {
+                    Actor m13=new Muro();
+                    addObject(m13,x7,182);
+                    x7=x7+30;
+                }
+    }
+    /**Genera escenario para el nivel 2*/
+    public void generaEscenarioNivel2()
+    {
+        
+    }
+    public void contadorEnemigo(int e)
+    {
+        System.out.println(e);
     }
 }
