@@ -106,4 +106,15 @@ public class Enemigo extends MoverObjetos
             world.addObject(Bala,x,y);
         }
     }
+    
+    /**Metodo que regresa F/V al tocar una bala*/
+    public boolean tocoBala()
+    {
+        Actor bala=getOneIntersectingObject(Bala_Jugador.class);
+            
+            if(bala != null)
+                return true;
+            else
+                return false;
+    }
 }

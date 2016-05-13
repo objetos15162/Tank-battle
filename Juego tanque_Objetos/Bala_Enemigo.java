@@ -59,15 +59,5 @@ public class Bala_Enemigo extends MoverObjetos
         MYWorld.quitaVida(1);
         
     }
-    
-    /**Desaparece la bala del Enemigo si toca el borde el mundo*/
-  /*  public void desapareceBalaEnemigo()
-    {
-        World mundo=getWorld();
-        MyWorld MYWorld= (MyWorld) mundo;
-        if(bordeMundo())
-        {
-            getWorld().removeObject(this);
-        }
-    }*/
+        
 }

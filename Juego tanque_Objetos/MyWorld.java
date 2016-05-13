@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Mi mundo
  */
@@ -10,8 +10,10 @@ public class MyWorld extends World
      private GreenfootImage imagenN; //Para cambiar la imagen normal
      private int vidas=5; //Vidas del jugador
      private Contador vida;  // para el contador
+     private Contador puntaje;
      private int nNivel=1;  //Para generar el escenario de acuerdo al nivel
      private Bala_Enemigo balaE;
+     private Enemigo enemigo;
      
     /**
      * Constructor for objects of class MyWorld.
@@ -28,7 +30,10 @@ public class MyWorld extends World
         
        
     }
-
+    /**act del mundo*/
+    public void act(){
+        //tocoBalaPozo();
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -59,7 +64,7 @@ public class MyWorld extends World
     public void ponPozo()
     {
         Pozo p1 = new Pozo();
-        addObject(p1,321,33);   
+        addObject(p1,321,33);
         
         Pozo p2= new Pozo();
         addObject(p2,70,30);
@@ -115,13 +120,25 @@ public class MyWorld extends World
             vida.setValue(vidas);
             //System.out.println(vidas);
         }
+    }  
+    /**Metodo para el puntaje*/
+    public void agregaPuntaje()
+    {
+        if(enemigo.tocoBala()==true)
+        {
+            puntaje.setValue(10);
+        }
     }
-    /**Agrega contador de vidas*/
+    /**Agrega contador de vidas y puntaje*/
     public void ponContador()
     {
           vida=new Contador("Vidas: ");
           addObject(vida,600,480);
           vida.setValue(5);
+          
+          //puntaje=new Contador("Puntaje: ");
+          //addObject(puntaje,500,480);
+          //puntaje.setValue(0);
     }
     /**Regresa el numero de vidas del jugador, esto es para el Contador*/
     public int getVidas()
@@ -138,6 +155,9 @@ public class MyWorld extends World
                 break;
             case 2:
                 //Escenario nivel 2
+                break;
+            case 3:
+                //Escenario nivel 3
                 break;
                 
                 
@@ -243,8 +263,50 @@ public class MyWorld extends World
     {
         
     }
-    public void contadorEnemigo(int e)
+    /**Genera escenario para el nivel 3*/
+    public void generaEscenarioNivel3()
     {
-        System.out.println(e);
+        
     }
+    
+    /**Obtiene el numero de pozos deljuego*/
+    public int obtenPozos()
+    {
+        int NPozos=0;
+        List listP;
+        listP=getObjects(Pozo.class);
+        NPozos=listP.size();
+        return NPozos;
+    }
+    /**Obtiene el numero de enemigos*/
+    public int obtenEnemigos()
+    {
+        int NEnemigos=0;
+        List listE;
+        listE=getObjects(Enemigo.class);
+        NEnemigos=listE.size();
+        return NEnemigos;      
+    }
+    /**Obtiene el numero de fabricas*/
+    public int obtenFabrica()
+    {
+        int NFabrica=0;
+        List listF;
+        listF=getObjects(Fabrica.class);
+        NFabrica=listF.size();
+        return NFabrica;
+    }
+   /**Cambia el nivel de escenario*/
+   public void cambiaNivel()
+   {
+       int pozo=0,enemigo=0,fabrica=0;
+       pozo=obtenPozos();
+       enemigo=obtenEnemigos();
+       fabrica=obtenFabrica();
+       
+       if(pozo==0 && enemigo==0&&fabrica==0)
+       {
+           nNivel=2;
+       }
+   }
 }

@@ -80,6 +80,7 @@ public class Bala_Jugador extends MoverObjetos
         }
         if(touch2==true){ //Si la bala toco al tanque
             getWorld().removeObject(this); //borra la la bala, el "this" hace referencia al objeto mismo osea la bala
+       
         }
     }
     catch(Exception e){
@@ -92,6 +93,7 @@ public class Bala_Jugador extends MoverObjetos
         if(Tanque3!=null){
             touch3=true; //Si la bala lo toco
             getWorld().removeObject(Tanque3);
+            
         }
         else{
             touch3=false; // Si no lo toco

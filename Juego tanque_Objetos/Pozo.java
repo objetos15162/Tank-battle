@@ -18,10 +18,13 @@ public class Pozo extends Actor
         boolean touch=false;
         MyWorld mundo=(MyWorld)getWorld();
         Actor bala=getOneIntersectingObject(Bala_Jugador.class);
+        try{
         if(bala!=null)
         {
             touch=true;
-            getWorld().removeObject(bala);            
+            getWorld().removeObject(bala); 
+            int P=mundo.obtenPozos();
+            System.out.println(P);
         }else
         {
             touch=false;
@@ -31,5 +34,20 @@ public class Pozo extends Actor
             mundo.removeObject(this);
         }
     }
+    catch(Exception e)
+        {
+         System.out.println(e.getMessage());
+        } 
+    }
     
+    /**Metodo que regresa F/V al tocar una bala*/
+    public boolean tocoBala()
+    {
+        Actor bala=getOneIntersectingObject(Bala_Jugador.class);
+            
+            if(bala != null)
+                return true;
+            else
+                return false;
+    }
 }
