@@ -15,6 +15,7 @@ public class Tanque_Jugador extends MoverObjetos
     {
         muevete();
         dispara();
+        //velocidad++;
         blindaje();
     } 
     public Tanque_Jugador()
