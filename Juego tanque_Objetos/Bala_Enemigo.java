@@ -10,7 +10,6 @@ public class Bala_Enemigo extends MoverObjetos
     {
         move();
         DesapareceTanque();
-        //desapareceBalaEnemigo();
     }    
     
     Bala_Enemigo(int direccion){

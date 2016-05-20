@@ -12,7 +12,8 @@ public class Pozo extends Actor
     {
         ChecaBalaJugador();
     } 
-    
+    /**Este metodo verifica si la bala del jugador toco
+      * a un pozo y lo borra*/
     public void ChecaBalaJugador()
     {
         boolean touch=false;

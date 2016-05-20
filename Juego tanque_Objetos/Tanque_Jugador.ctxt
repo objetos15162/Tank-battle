@@ -22,4 +22,5 @@ comment7.target=void\ cambiaImagen()
 comment7.text=Cambia\ la\ imagen\ del\ tanquue
 comment8.params=
 comment8.target=void\ blindaje()
+comment8.text=Modifica\ la\ imagen\ del\ Tanque,\ haciendo\ que\ paresca\ que\ traiga\ un\ blindaje\ alrededor
 numComments=9

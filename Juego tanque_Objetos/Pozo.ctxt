@@ -6,6 +6,7 @@ comment1.target=void\ act()
 comment1.text=\r\n\r\n
 comment2.params=
 comment2.target=void\ ChecaBalaJugador()
+comment2.text=Este\ metodo\ verifica\ si\ la\ bala\ del\ jugador\ toco\r\na\ un\ pozo\ y\ lo\ borra
 comment3.params=
 comment3.target=boolean\ tocoBala()
 comment3.text=Metodo\ que\ regresa\ F/V\ al\ tocar\ una\ bala

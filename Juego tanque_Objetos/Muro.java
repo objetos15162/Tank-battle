@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Muro here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ *Es el muro de ladrillo que se crea en cada escenario
  */
 public class Muro extends Actor
 {

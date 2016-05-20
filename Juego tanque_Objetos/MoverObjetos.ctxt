@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MoverObjetos
-comment0.text=\r\n\ La\ clase\ MoverObjetos\ define\ los\ movimientos\ del\ jugador,\r\n\ los\ momivientos\ del\ enemigo\r\n
+comment0.text=\r\n\ La\ clase\ MoverObjetos\ define\ los\ movimientos\ del\ jugador,\r\n\ los\ momivientos\ del\ enemigo\ y\ las\ balas\ de\ ambos\r\n
 comment1.params=
 comment1.target=void\ turn()
 comment1.text=\r\n\ Gira\ 90\ grados\ a\ la\ derecha.\r\n

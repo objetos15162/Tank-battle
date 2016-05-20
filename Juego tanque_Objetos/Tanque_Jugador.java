@@ -136,7 +136,7 @@ public class Tanque_Jugador extends MoverObjetos
             setImage(imagenN);
         }
     }
-    
+    /**Modifica la imagen del Tanque, haciendo que paresca que traiga un blindaje alrededor*/
     public void blindaje()
     {
         boolean touch=false;

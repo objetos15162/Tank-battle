@@ -11,7 +11,7 @@ public class MyWorld extends World
      private int vidas=5; //Vidas del jugador
      private Contador vida;  // para el contador
      private Contador puntaje;
-     private int nNivel=2;  //Para generar el escenario de acuerdo al nivel
+     private int nNivel=1;  //Para generar el escenario de acuerdo al nivel
      private Bala_Enemigo balaE;
      private Enemigo enemigo;
      private int tipo=1; //variable del escenario para saber como va a actuar
@@ -27,15 +27,14 @@ public class MyWorld extends World
         imagenN=new GreenfootImage("Tanque_Jugador_SinFondo.png");
         //prepare();
         /**Lo pongo al principio del juego para que se cree la interfaz del primer nivel*/
-       //creaInterfaz();
-       
-        
+       creaInterfaz();
        
     }
     /**ACT del mundo---Se cambio el nombre al metodo por juego*/
     public void act()  //started
     {
-        switch(tipo)
+        
+        switch(nNivel)
         {
             case 1: //Nivel 1
                     //creaInterfaz();
@@ -46,31 +45,28 @@ public class MyWorld extends World
                         //removeObjects(getObjects(null));
                         tipo=2;
                     }
-                    break;
-            case 2:if(Greenfoot.isKeyDown("enter")) //se uso un condicional para que no creara varios objetos
-                   {
-                    setBackground("muroLadrillo.jpg");
-                    generaEscenario();
-                    creaJugador();
-                    creaEnemigos();
-                    ponPozo();
-                    ponFabrica();
-                    ponContador();
                     
-                    if(cambiaNivel())
-                    {
-                       nNivel=3;
-                       cambiaEscenario(2); 
-                       tipo=3;
-                    }
-  
                     break;
+            case 2: 
+                    /*if(Greenfoot.isKeyDown("enter")) //se uso un condicional para que no creara varios objetos
+                   {
+                     setBackground("muroLadrillo.jpg");
+                     creaInterfaz();
+                     
                    }
-                   
-            case 3:if(Greenfoot.isKeyDown("enter"))
-                    {
-                    setBackground("muroLadrillo.jpg");
-                }
+                    if(cambiaNivel())
+                  {
+                      nNivel=3;
+                     cambiaEscenario(2); 
+                     tipo=3;
+                    }
+                  */
+                    break;
+                    
+            case 3://if(Greenfoot.isKeyDown("enter"))
+                    //{
+                    //setBackground("muroLadrillo.jpg");
+                //}
         }
     }
     /**
@@ -91,13 +87,26 @@ public class MyWorld extends World
     /**Crea la interfaz del juego */
     public void creaInterfaz()
     {
-        creaJugador();
-        ponContador();
-        generaEscenario();
-        creaEnemigos();
-        ponPozo();
-        ponFabrica();
-        ponBlindaje();
+        switch(nNivel){
+            case 1:
+                    creaJugador();
+                    ponContador();
+                    generaEscenario();
+                    creaEnemigos();
+                    ponPozo();
+                    ponFabrica();
+                    ponBlindaje();
+                    break;
+            case 2:
+                    creaJugador();
+                    ponContador();
+                    generaEscenario();
+                    creaEnemigos();
+                    ponPozo();
+                    ponFabrica();
+                    ponBlindaje();
+                    break;
+    }
     }
     /**Crea el poder delblindaje*/
     public void ponBlindaje()
@@ -518,11 +527,11 @@ public class MyWorld extends World
        
        if(pozo==0 && enemigo==0&&fabrica==0)
        {
-           return true;
+           return true; //true
        }
        else
        {
-           return false;
+           return false;     //false
         }
       
    }

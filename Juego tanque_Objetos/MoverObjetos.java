@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
  * La clase MoverObjetos define los movimientos del jugador,
- * los momivientos del enemigo
+ * los momivientos del enemigo y las balas de ambos
  */
 public class MoverObjetos extends Actor
 {
