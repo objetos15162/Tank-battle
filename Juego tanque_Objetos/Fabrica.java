@@ -5,17 +5,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Fabrica extends Actor
 {
-    
+
     public void act() 
     {
-       ChecaBalaJugador();
+        ChecaBalaJugador();
     }    
+
     /**Verifica si la bala del jugador toco alobjeto fabrica*/
     public void ChecaBalaJugador()
     {
         boolean touch=false;
-        MyWorld mundo=(MyWorld)getWorld();
-        Actor bala=getOneIntersectingObject(Bala_Jugador.class);
+        Niveles mundo=(Niveles)getWorld();
+        Actor bala=getOneIntersectingObject(BalaJugador.class);
         if(bala!=null)
         {
             touch=true;

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=BalaJugador
+comment0.text=\r\nLa\ clase\ simula\ la\ bala\ disparada\ por\ el\ tanque\r\n
+comment1.params=direccion
+comment1.target=BalaJugador(int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=metodo\ Act,\ manda\ llamar\ a\ la\ clase\ move,\ para\ que\ la\ bala\ salga\r\nde\ la\ misma\ posicion\ X,Y\ que\ el\ tanque\ del\ jugador
+comment3.params=
+comment3.target=void\ desapareceEnemigos()
+comment3.text=Este\ metodo\ Elimina\ a\ los\ enemigos\ tocados\ por\ una\ bala\r\ny\ lo\ desaparece\ junto\ con\ la\ bala\r\nLa\ intruccion\ "getOneIntersectingObject"\ Devuelve\ un\ objeto\ que\ se\ cruza\ con\r\nel\ objeto\ Tanque,\ en\ este\ caso\ la\ bala
+numComments=4

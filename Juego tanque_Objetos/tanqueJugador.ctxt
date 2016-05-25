@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=tanqueJugador
+comment0.text=\r\nEsta\ es\ la\ clase\ del\ Jugador\r\n
+comment1.params=
+comment1.target=tanqueJugador()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ muevete()
+comment3.text=Metodo\ de\ movimiento\ y\ verifica\ si\ existe\ un\ muro
+comment4.params=
+comment4.target=void\ cambiaPosicion()
+comment4.text=\r\n\ Cuando\ se\ encuentra\ con\ una\ pared\ da\ vuelta\ \r\n\ y\ cambia\ de\ posicion\r\n
+comment5.params=Rotacion
+comment5.target=void\ cambiaDireccion(int)
+comment5.text=\r\n\ Cambia\ la\ Direccion\ del\ tanque\ del\ jugador\ dependiendo\ hacia\ donde\ se\ haya\ girado\r\n\ 270\=\ Arriba\r\n\ 90\=\ Abajo\r\n\ 0\=\ Deracha\r\n\ 180\=Izquierda\r\n
+comment6.params=
+comment6.target=void\ dispara()
+comment6.text=\ \r\n\ Hace\ que\ el\ tanque\ del\ usuario\ dispare\ con\ la\ tecla\ abajo\ del\ las\ teclas\ de\ direccion\r\n
+comment7.params=
+comment7.target=void\ cambiaImagen()
+comment7.text=Cambia\ la\ imagen\ del\ tanquue
+comment8.params=
+comment8.target=void\ blindaje()
+comment8.text=Modifica\ la\ imagen\ del\ Tanque,\ haciendo\ que\ paresca\ que\ traiga\ un\ blindaje\ alrededor
+numComments=9

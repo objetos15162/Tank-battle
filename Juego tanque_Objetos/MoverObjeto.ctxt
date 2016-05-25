@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=MoverObjeto
+comment0.text=\r\n\ La\ clase\ MoverObjetos\ define\ los\ movimientos\ del\ jugador,\r\n\ los\ momivientos\ del\ enemigo\ y\ las\ balas\ de\ ambos\r\n
+comment1.params=
+comment1.target=void\ turn()
+comment1.text=\r\n\ Gira\ 90\ grados\ a\ la\ derecha.\r\n
+comment2.params=angulo
+comment2.target=void\ turn(int)
+comment2.text=\r\n\ Gira\ la\ X\ grados\ dependiendo\ del\ valor\ que\ se\ le\ asigne\r\n
+comment3.params=
+comment3.target=void\ move()
+comment3.text=\r\n\ Mueve\ al\ objeto\ una\ posicion\ en\ la\ direccion\ actual\r\n
+comment4.params=distance
+comment4.target=void\ move(double)
+comment4.text=\r\n\ Muevo\ una\ direccion\ especifica\ en\ la\ direccion\ actual\r\n
+comment5.params=
+comment5.target=boolean\ ExisteMuro()
+comment5.text=\r\n\ Este\ metodo\ verifica\ si\ existe\ algun\ muro\ alrededor\r\n\ La\ instruccion\ "getNeighbours"\ devuelve\ los\ Objetos\ vecinos\ de\ una\ distancia\r\n\ La\ distancia\ es\ 40;\ el\ True\ incluye\ las\ diagonales;\ solamente\ checa\ en\ la\ clase\ muro\r\n
+comment6.params=
+comment6.target=boolean\ bordeMundo()
+comment6.text=\r\n\ Checa\ si\ el\ tanque\ esta\ en\ el\ borde\ del\ mundo\ y\ regresa\ verdadero\ o\ falso\r\n
+numComments=7

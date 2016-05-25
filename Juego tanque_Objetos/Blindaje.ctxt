@@ -2,10 +2,7 @@
 comment0.target=Blindaje
 comment0.text=\r\n\ Esta\ clase\ representa\ el\ blindaje\ del\ jugador\r\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=Blindaje()
 comment2.params=
-comment2.target=Blindaje()
-comment3.params=
-comment3.target=void\ Blindaje()
-comment3.text=Metodo\ para\ cambiar\ el\ blindaje\ del\ jugador
-numComments=4
+comment2.target=void\ act()
+numComments=3

@@ -12,43 +12,44 @@ public class Pozo extends Actor
     {
         ChecaBalaJugador();
     } 
+
     /**Este metodo verifica si la bala del jugador toco
-      * a un pozo y lo borra*/
+     * a un pozo y lo borra*/
     public void ChecaBalaJugador()
     {
         boolean touch=false;
-        MyWorld mundo=(MyWorld)getWorld();
-        Actor bala=getOneIntersectingObject(Bala_Jugador.class);
+        Niveles mundo=(Niveles)getWorld();
+        Actor bala=getOneIntersectingObject(BalaJugador.class);
         try{
-        if(bala!=null)
-        {
-            touch=true;
-            getWorld().removeObject(bala); 
-            int P=mundo.obtenPozos();
-            System.out.println(P);
-        }else
-        {
-            touch=false;
+            if(bala!=null)
+            {
+                touch=true;
+                getWorld().removeObject(bala); 
+                int P=mundo.obtenPozos();
+                System.out.println(P);
+            }else
+            {
+                touch=false;
+            }
+            if (touch==true)
+            {
+                mundo.removeObject(this);
+            }
         }
-        if (touch==true)
+        catch(Exception e)
         {
-            mundo.removeObject(this);
-        }
-    }
-    catch(Exception e)
-        {
-         System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
         } 
     }
-    
+
     /**Metodo que regresa F/V al tocar una bala*/
     public boolean tocoBala()
     {
-        Actor bala=getOneIntersectingObject(Bala_Jugador.class);
-            
-            if(bala != null)
-                return true;
-            else
-                return false;
+        Actor bala=getOneIntersectingObject(BalaJugador.class);
+
+        if(bala != null)
+            return true;
+        else
+            return false;
     }
 }
