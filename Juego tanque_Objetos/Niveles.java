@@ -160,7 +160,7 @@ public class Niveles extends World
             addObject(e3,50,100);
             e3.turn(180);
 
-            /*MoverObjeto e4= new Enemigo2();
+            MoverObjeto e4= new Enemigo2();
             addObject(e4,80,250);
             e4.turn(180);
 
@@ -170,7 +170,7 @@ public class Niveles extends World
 
             MoverObjeto e6= new Enemigo2();
             addObject(e6,205,25);
-            e6.turn(180);*/
+            e6.turn(180);
 
             break;
 
@@ -186,14 +186,15 @@ public class Niveles extends World
             MoverObjeto e9=new Enemigo3();
             addObject(e9,358,218);
             e9.turn(180);
-            /*
+            
             MoverObjeto e10=new Enemigo3();
             addObject(e10,514,450);
             e10.turn(180);
 
             MoverObjeto e11=new Enemigo3();
             addObject(e11,535,65);
-            e11.turn(180);*/
+            e11.turn(180);
+            
             break;
             case 3:
             MoverObjeto e12=new Enemigo1();
@@ -204,14 +205,14 @@ public class Niveles extends World
             addObject(e13,66,101);
             e13.turn(180);
 
-            /*MoverObjeto e14=new Enemigo1();
+            MoverObjeto e14=new Enemigo1();
             addObject(e14,420,163);
             e14.turn(180);
 
             MoverObjeto e15=new Enemigo1();
             addObject(e15,450,450);
             e15.turn(180);
-                */
+                
             break;
 
         }
